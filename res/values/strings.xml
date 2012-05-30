@@ -34,16 +34,11 @@
     <string name="menu_reset">Reset</string>
 
     <string name="eq_preset_acoustic">Acoustic</string>
-    <string name="eq_preset_bass_booster">Bass Booster</string>
-    <string name="eq_preset_bass_reducer">Bass Reducer</string>
     <string name="eq_preset_classical">Classical</string>
-    <string name="eq_preset_deep">Deep</string>
     <string name="eq_preset_flat">Flat</string>
     <string name="eq_preset_r_and_b">R&amp;B</string>
     <string name="eq_preset_rock">Rock</string>
     <string name="eq_preset_small_speakers">Small Speakers</string>
-    <string name="eq_preset_treble_booster">Treble Booster</string>
-    <string name="eq_preset_treble_reducer">Treble Reducer</string>
     <string name="eq_preset_vocal_booster">Vocal Booster</string>
     <string name="eq_preset_custom">Custom</string>
 
