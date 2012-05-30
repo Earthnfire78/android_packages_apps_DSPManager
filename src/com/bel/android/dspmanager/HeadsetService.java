@@ -226,7 +226,6 @@ public class HeadsetService extends Service {
 			}
 			catch (Exception e) {
 				throw new RuntimeException(e);
-			}
 			
 			/* Here is were virtualizer effects would go, I removed it as virtualizing effects
                          * are shit anyways.   Plus these kinds of effects can damage the cheap headsets and
