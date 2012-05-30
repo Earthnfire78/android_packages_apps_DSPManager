@@ -228,5 +228,13 @@ public class HeadsetService extends Service {
 				throw new RuntimeException(e);
 			}
 		}
+
+		{
+			virtualizer.setEnabled(preferences.getBoolean("dsp.headphone.enable", false));
+			if (virtualizer.getStrengthSupported()) {
+				String strength = preferences.getString("dsp.headphone.mode", "0");
+				virtualizer.setStrength(Short.valueOf(strength));
+			}
+		}
 	}	
 }
