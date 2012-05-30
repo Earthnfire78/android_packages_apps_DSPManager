@@ -45,12 +45,4 @@
 			android:entryValues="@array/equalizer_loudness_values"/>
 	</PreferenceCategory>
 
-	<PreferenceCategory android:title="@string/pref_headset_virtual_title">
-		<CheckBoxPreference android:key="dsp.headphone.enable"
-			android:disableDependentsState="false" android:summaryOn="@string/pref_headset_virtual_summary_on"
-			android:summaryOff="@string/pref_headset_virtual_summary_off" android:title="@string/pref_headset_virtual_enable"></CheckBoxPreference>
-		<com.bel.android.dspmanager.preference.SummariedListPreference
-			android:dialogTitle="@string/dialog_room" android:key="dsp.headphone.mode" android:entryValues="@array/headphone_modes_values" android:title="@string/pref_room_title" android:defaultValue="0" android:entries="@array/headphone_modes"/>
-	</PreferenceCategory>
-
 </PreferenceScreen>
