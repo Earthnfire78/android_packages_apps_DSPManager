@@ -16,7 +16,6 @@ import android.media.AudioManager;
 import android.media.audiofx.AudioEffect;
 import android.media.audiofx.BassBoost;
 import android.media.audiofx.Equalizer;
-import android.media.audiofx.Virtualizer;
 import android.os.IBinder;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
@@ -52,7 +51,6 @@ public class HeadsetService extends Service {
 
     private AudioManager mAudioManager;
 	private Equalizer equalizer;
-	private Virtualizer virtualizer;
 	private BassBoost bassBoost;
 	
 	protected boolean useHeadphone;
@@ -136,7 +134,6 @@ public class HeadsetService extends Service {
 		Log.i(TAG, "Starting service.");
 
 		equalizer = new Equalizer(0, 0);
-		virtualizer = new Virtualizer(0, 0);
 		bassBoost = new BassBoost(0, 0);
 		
 		startForeground(DSPManager.NOTIFY_FOREGROUND_ID, new Notification());
@@ -229,14 +226,6 @@ public class HeadsetService extends Service {
 			}
 			catch (Exception e) {
 				throw new RuntimeException(e);
-			}
-		}
-
-		{
-			virtualizer.setEnabled(preferences.getBoolean("dsp.headphone.enable", false));
-			if (virtualizer.getStrengthSupported()) {
-				String strength = preferences.getString("dsp.headphone.mode", "0");
-				virtualizer.setStrength(Short.valueOf(strength));
 			}
 		}
 	}	
