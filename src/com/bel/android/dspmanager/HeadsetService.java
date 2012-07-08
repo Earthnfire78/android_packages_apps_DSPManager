@@ -16,6 +16,7 @@ import android.media.AudioManager;
 import android.media.audiofx.AudioEffect;
 import android.media.audiofx.BassBoost;
 import android.media.audiofx.Equalizer;
+/* import android.media.audiofx.Virtualizer; */
 import android.os.IBinder;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
@@ -44,15 +45,16 @@ public class HeadsetService extends Service {
 	protected static final String TAG = HeadsetService.class.getSimpleName();
 
 	public static final UUID EFFECT_TYPE_VOLUME = UUID.fromString("09e8ede0-ddde-11db-b4f6-0002a5d5c51b");
-
+	
     public static final UUID EFFECT_TYPE_NULL = UUID.fromString("ec7178ec-e5e1-4432-a3f4-4657e6795210");
 
     protected Map<Integer, AudioEffect> compressionSessions = new HashMap<Integer, AudioEffect>();
 
     private AudioManager mAudioManager;
 	private Equalizer equalizer;
+	/* private Virtualizer virtualizer; */
 	private BassBoost bassBoost;
-
+	
 	protected boolean useHeadphone;
 
 	protected boolean inCall;
@@ -134,13 +136,14 @@ public class HeadsetService extends Service {
 		Log.i(TAG, "Starting service.");
 
 		equalizer = new Equalizer(0, 0);
+		/* virtualizer = new Virtualizer(0, 0); */
 		bassBoost = new BassBoost(0, 0);
-
+		
 		startForeground(DSPManager.NOTIFY_FOREGROUND_ID, new Notification());
-
+		
 		TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 		tm.listen(mPhoneListener, PhoneStateListener.LISTEN_CALL_STATE);
-
+			
 		IntentFilter audioFilter = new IntentFilter();
 		audioFilter.addAction(AudioEffect.ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION);
 		audioFilter.addAction(AudioEffect.ACTION_CLOSE_AUDIO_EFFECT_CONTROL_SESSION);
@@ -150,21 +153,21 @@ public class HeadsetService extends Service {
 		Context context = getApplicationContext();
 		mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 	}
-
+	
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
 		Log.i(TAG, "Stopping service.");
 
 		stopForeground(true);
-
+		
 		unregisterReceiver(audioSessionReceiver);
 		unregisterReceiver(headsetReceiver);
 		unregisterReceiver(preferenceUpdateReceiver);
 		TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 		tm.listen(mPhoneListener, 0);
 	}
-
+	
 	@Override
 	public IBinder onBind(Intent intent) {
 		return null;
@@ -175,7 +178,7 @@ public class HeadsetService extends Service {
 	 */
 	protected void updateDsp() {
 		final String mode;
-
+		
 		if (inCall) {
 			/* During calls, everything gets disabled; there is no configuration called 'disable' */
 			mode = "disable";
@@ -200,7 +203,7 @@ public class HeadsetService extends Service {
 				throw new RuntimeException(e);
 			}
 		}
-
+		
 		{
 			bassBoost.setEnabled(preferences.getBoolean("dsp.bass.enable", false));
 			if (bassBoost.getStrengthSupported()) {
@@ -226,10 +229,15 @@ public class HeadsetService extends Service {
 			}
 			catch (Exception e) {
 				throw new RuntimeException(e);
-			
-			/* Here is were virtualizer effects would go, I removed it as virtualizing effects
-                         * are shit anyways.   Plus these kinds of effects can damage the cheap headsets and
-                         * headphones we all have. */
+              /*        }
+	       * }
+	       *
+	       * { */     /* Virtualizer is a pointless sound effect INHO, but it is here just in case
+                         * someone really likes those effects. */ 
+	      /*	virtualizer.setEnabled(preferences.getBoolean("dsp.headphone.enable", false));
+	       *	if (virtualizer.getStrengthSupported()) {
+	       *		String strength = preferences.getString("dsp.headphone.mode", "0");
+	       *		virtualizer.setStrength(Short.valueOf(strength)); */
 			}
 		}
 	}	
