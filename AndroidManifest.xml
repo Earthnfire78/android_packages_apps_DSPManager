@@ -5,10 +5,13 @@
 
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
 		<activity android:label="@string/app_name" android:name=".activity.DSPManager">
-			<intent-filter>
+		
+		<!-- Since DSPManager is more of a plug-in E.Q. for the default
+		Music Player, the Launcher Icon is not shown in app draw -->	
+			<!-- <intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
+			</intent-filter> -->
 			<intent-filter>
 				<action android:name="android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL"></action>
 				<category android:name="android.intent.category.DEFAULT"></category>
