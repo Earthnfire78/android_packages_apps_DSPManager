@@ -3,12 +3,14 @@
   <string-array name="equalizer_preset_modes" translatable="false">
     <item>@string/eq_preset_acoustic</item>
     <item>@string/eq_preset_classical</item>
+    <item>@string/eq_preset_easy_listening</item>
+    <item>@string/eq_preset_electronic</item>
     <item>@string/eq_preset_flat</item>
+    <item>@string/eq_preset_jazz</item>
     <item>@string/eq_preset_r_and_b</item>
     <item>@string/eq_preset_rock</item>
-    <item>@string/eq_preset_small_speakers</item>
-    <item>@string/eq_preset_vocal_booster</item>
-    <item>@string/eq_preset_custom</item>
+    <item>@string/eq_preset_vocals</item>
+<!--    <item>@string/eq_preset_custom</item>  -->
   </string-array>
 
   <string-array name="equalizer_loudness_modes">
@@ -22,14 +24,16 @@
   </string-array>
 
   <string-array name="equalizer_preset_values" translatable="false">
-    <item>4.5;4.5;3.5;1.75;3.5;2.5;</item>    <!-- Acoustic -->
-    <item>4.0;4.0;3.25;-0.5;2.0;3.5;</item>   <!-- Classical -->
-    <item>0.0;0.0;0.0;0.0;0.0;0.0;</item>     <!-- Flat -->
-    <item>5.5;5.5;3.5;-1.75;1.5;2.5;</item>   <!-- R&B -->
-    <item>9.0;8.6;3.3;7.5;9.1;9.6;</item>  <!-- Rock -->
-    <item>6.5;6.5;4.0;0.0;-1.5;1.2;</item>   <!-- Small Speakers -->
-    <item>-2.5;-2.5;0.0;3.5;1.5;-2.0;</item>  <!-- Vocal Booster -->
-    <item>custom</item>                       <!-- Custom -->
+    <item>4.5;4.5;3.5;1.75;3.5;3.7;</item>  <!-- Acoustic -->
+    <item>5.6;5.0;3.25;3.5;5.0;5.5;</item>  <!-- Classical -->
+    <item>3.2;5.1;4.0;4.7;5.2;5.7;</item>  <!-- Easy Listening -->
+    <item>7.0;6.7;3.7;4.5;4.8;5.3;</item>  <!-- Electronic -->
+    <item>0.0;0.0;0.0;0.0;0.0;0.0;</item>   <!--  Flat -->
+    <item>6.1;5.7;3.8;5.2;6.1;5.4;</item>  <!-- Jazz -->
+    <item>5.7;5.5;3.5;1.75;2.0;2.5;</item>  <!-- R&B -->
+    <item>6.7;6.3;3.1;5.8;6.6;7.0;</item>  <!-- Rock -->
+    <item>-0.5;2.1;2.6;3.5;1.5;0.0;</item>  <!-- Vocals -->
+<!--    <item>custom</item>                    Custom -->
   </string-array>
 
   <string-array name="compression_modes">
@@ -47,13 +51,14 @@
   <string-array name="bassboost_modes">
     <item>Low</item>
     <item>Medium</item>
-    <item>High</item>
-  </string-array>
+    <item>High</item> 
+  </string-array> 
 
   <string-array name="bassboost_modes_values" translatable="false">
     <item>0</item>
+    <item>300</item>
     <item>500</item>
-    <item>1000</item>
+    <item>700</item> 
   </string-array>
 
 </resources>

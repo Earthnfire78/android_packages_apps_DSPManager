@@ -28,8 +28,8 @@ public class EqualizerPreference extends DialogPreference {
 
 	public EqualizerPreference(Context context, AttributeSet attributeSet) {
 		super(context, attributeSet);
-		setLayoutResource(R.layout.equalizer);
-		setDialogLayoutResource(R.layout.equalizer_popup);
+		 setLayoutResource(R.layout.equalizer);
+		 setDialogLayoutResource(R.layout.equalizer_popup);
 	}
 
 	@Override

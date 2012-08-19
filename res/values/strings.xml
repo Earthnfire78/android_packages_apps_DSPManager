@@ -3,17 +3,15 @@
     <string name="app_name">DSPManager</string>
     <string name="select_configuration_title">Select Configuration To Edit</string>
     <string name="headset_title">Headset</string>
-    <string name="speaker_title">Phone Speaker</string>
-    <string name="bluetooth_title">Bluetooth Device</string>
+    <string name="bluetooth_title">Bluetooth</string>
     <string name="audio_effects">Audio Effects</string>
-    <string name="dsp_settings_headset">DSP Settings - Headset</string>
-    <string name="dsp_settings_speaker">DSP Settings - Phone Speaker</string>
-    <string name="dsp_settings_bluetooth">DSP Settings - Bluetooth Device</string>
+    <string name="dsp_settings_headset">Headset DSP Settings</string>
+    <string name="dsp_settings_bluetooth">Bluetooth DSP Settings</string>
     <string name="pref_dsp_title">Dynamic Range Compression</string>
     <string name="pref_dsp_summary_on">Compression is enabled</string>
     <string name="pref_dsp_summary_off">Compression is disabled</string>
     <string name="pref_dsp_enable">Enable</string>
-    <string name="pref_effect_title">Select Effect Strength</string>
+    <string name="pref_effect_title">Select Effect Strength</string> 
     <string name="dialog_effect">Effect Strength</string>
     <string name="pref_equalizer_title">Equalizer</string>
     <string name="pref_equalizer_summary_on">Equalizer is enabled</string>
@@ -29,11 +27,13 @@
 
     <string name="eq_preset_acoustic">Acoustic</string>
     <string name="eq_preset_classical">Classical</string>
+    <string name="eq_preset_easy_listening">Easy Listening</string>
+    <string name="eq_preset_electronic">Electronic</string>
     <string name="eq_preset_flat">Flat</string>
+    <string name="eq_preset_jazz">Jazz</string>
     <string name="eq_preset_r_and_b">R&amp;B</string>
     <string name="eq_preset_rock">Rock</string>
-    <string name="eq_preset_small_speakers">Small Speakers</string>
-    <string name="eq_preset_vocal_booster">Vocal Booster</string>
-    <string name="eq_preset_custom">Custom</string>
+    <string name="eq_preset_vocals">Vocals</string>
+<!--    <string name="eq_preset_custom">Custom</string> -->
 
 </resources>
