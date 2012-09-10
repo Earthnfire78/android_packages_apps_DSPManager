@@ -17,6 +17,10 @@
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
 			<intent-filter>
+				<action android:name="com.bel.android.dspmanager.SPEAKER" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<intent-filter>
 				<action android:name="com.bel.android.dspmanager.BLUETOOTH" />
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
